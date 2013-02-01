@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1359749130 source:/home/ilya/ads/c/dataloader/dataloader.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1359750429 source:/home/ilya/ads/c/dataloader/main.c
+	<stdio.h>
+	<stdlib.h>
+	"dataloader.h"
+	"mergesort.h"
+
+1359717330 /home/ilya/ads/c/dataloader/dataloader.h
+
+1359750515 /home/ilya/ads/c/dataloader/mergesort.h
+
+1359749952 /home/ilya/ads/c/dataloader/ex.h
+
+1359717330 source:/home/ilya/ads/c/dataloader/dataloader.h
+
+1359749952 source:/home/ilya/ads/c/dataloader/ex.h
+
+1359750515 source:/home/ilya/ads/c/dataloader/mergesort.h
+
+1359750594 source:/home/ilya/ads/c/dataloader/mergesort.c
+	<stdlib.h>
+	<stdio.h>
+
