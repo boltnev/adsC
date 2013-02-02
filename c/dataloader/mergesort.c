@@ -21,8 +21,8 @@ void merge(long *left, long *right, int n){
         }
 
         if(j == n){
-            for(;j < n;){
-                temp[k++] = left[j++];
+            for(;i < n;){
+                temp[k++] = left[i++];
             }
         }
     }
