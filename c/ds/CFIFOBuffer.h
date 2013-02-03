@@ -1,0 +1,6 @@
+#ifndef CFIFOBUFFER_H_INCLUDED
+#define CFIFOBUFFER_H_INCLUDED
+
+void hello();
+
+#endif // CFIFOBUFFER_H_INCLUDED
