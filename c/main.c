@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int main(){
-    int logVariable;
-
-    logVariable;
-
+int main()
+{
+    printf("Hello world!\n");
     return 0;
 }
