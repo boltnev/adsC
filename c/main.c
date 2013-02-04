@@ -18,8 +18,22 @@ int main(){
 
     mergesort(data, datalength);
 
+    printf("\n\nsorted array...\n\n", datalength);
+
     for(i = 0; i < datalength; i++)
         printf("%ld ", data[i]);
+
+    printf("\n\ndeposing...\n\n");
+
+    for(i = 0; i < 10; i++)
+        depose(data[i]);
+
+
+    printf("\n\nfetching...\n\n");
+
+    for(i = 0; i < 100 && !bufferempty; i++)
+        printf("%ld ", fetch());
+
 
     return 0;
 }

@@ -29,7 +29,6 @@ void merge(long *left, long *right, int lsize, int rsize){
     memcpy(left, temp, sizeof(long) * (lsize + rsize));
     free(temp);
 }
-
 void mergesort(long *data, int datasize){
     int lsize, rsize;
     lsize = datasize / 2;
@@ -43,5 +42,4 @@ void mergesort(long *data, int datasize){
         merge(data, data + lsize, lsize, rsize);
     }
 }
-
 
