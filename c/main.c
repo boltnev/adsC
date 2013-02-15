@@ -16,9 +16,9 @@ int main(){
 
     printf("\n\n%d\n\n", datalength);
 
-    mergesort(data, datalength);
+    IBmergesort(data, datalength);
 
-    printf("\n\nsorted array...\n\n", datalength);
+    printf("\n\nsorted array...\n\n");
 
     for(i = 0; i < datalength; i++)
         printf("%ld ", data[i]);

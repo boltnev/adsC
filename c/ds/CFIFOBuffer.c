@@ -12,9 +12,9 @@ int bufferempty = 1;
 void depose(long x){
     if(!bufferfull){
         buffer[in] = x;
-        in = in++;
+        in++;
         in = in % MAXBUFFER;
-        n = n--;
+        n--;
 
         if(n == 0){
             bufferfull = 1;
@@ -25,7 +25,7 @@ void depose(long x){
 
 long fetch(){
     if(!bufferempty){
-        out = out++;
+        out++;
         out = out % MAXBUFFER;
         n++;
 
