@@ -3,6 +3,7 @@
 #include "ds/CFIFOBuffer.h"
 #include "algs/mergesort.h"
 #include "dataloader/dataloader.h"
+#include "quicksort.h"
 
 #define MAX_ELEMENTS 1024*1024
 
@@ -14,26 +15,17 @@ int main(){
 
     dataload(data, &datalength);
 
+    //long data[] = {100, 0, 1, -1, 2, -2, 3, -3};
+    //datalength = 8;
+    
     printf("\n\n%d\n\n", datalength);
 
-    IBmergesort(data, datalength);
+    IBquicksort(data, datalength);
 
     printf("\n\nsorted array...\n\n");
 
     for(i = 0; i < datalength; i++)
         printf("%ld ", data[i]);
-
-    printf("\n\ndeposing...\n\n");
-
-    for(i = 0; i < 10; i++)
-        depose(data[i]);
-
-
-    printf("\n\nfetching...\n\n");
-
-    for(i = 0; i < 100 && !bufferempty; i++)
-        printf("%ld ", fetch());
-
 
     return 0;
 }
