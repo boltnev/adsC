@@ -1,5 +1,12 @@
-#include <stdio.h>
-
+//
+//  CFIFOBuffer.c
+//  ads
+//
+//  Created by Ilya Boltnev on 2/16/13.
+//  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
+//
+//  Cyclic FIFO buffer
+//  TODO: remake it as struct#include <stdio.h>
 #define MAXBUFFER 1024
 
 static int in = 0;
