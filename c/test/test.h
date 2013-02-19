@@ -10,5 +10,6 @@
 #define ads_test_h
 
 void test_quicksort();
+int  tests_substr();
 
 #endif

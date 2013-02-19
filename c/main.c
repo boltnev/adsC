@@ -1,6 +1,6 @@
 #include "test.h"
 
 int main(){
-    test_quicksort();
+    tests_substr();
     return 0;
 }

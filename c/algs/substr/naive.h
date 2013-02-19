@@ -9,6 +9,6 @@
 #ifndef ads_naive_h
 #define ads_naive_h
 
-int IB_naive_substr(char *s, char *p, int n, int m);
+int IB_naive_substr(char *s, char *p);
 
 #endif
