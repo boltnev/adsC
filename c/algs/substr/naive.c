@@ -10,8 +10,9 @@
 int IB_naive_substr(char *s, char *p){
     int i = 0;
     int j;
-    int n = strlen(s);
-    int m = strlen(p);
+    size_t n = strlen(s);
+    size_t m = strlen(p);
+    
     while(i < (n - m + 1))
     {
         j = 0;

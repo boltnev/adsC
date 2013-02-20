@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
 //
 //  Cyclic FIFO buffer
-//  TODO: remake it as struct#include <stdio.h>
+//  TODO: remake it as struct
+#include <stdio.h>
 #define MAXBUFFER 1024
 
 static int in = 0;

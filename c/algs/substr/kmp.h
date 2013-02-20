@@ -9,6 +9,7 @@
 #ifndef ads_kmp_h
 #define ads_kmp_h
 
-
+void IB_get_prefix_function(char *s, long prefix_function[]);
+int IB_KMP_substr(char *p, char *s);
 
 #endif
