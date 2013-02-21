@@ -1,6 +1,7 @@
 #include "test.h"
 
 int main(){
-    tests_substr();
+    
+    test_substr_generator();
     return 0;
 }

@@ -15,8 +15,11 @@
 #include "naive.h"
 #include "kmp.h"
 #include <string.h>
+#include "generator.h"
 
 #define MAX_ELEMENTS 1024*1024
+#define MEGABYTE 1024*1024*1 /* 1 MB */
+
 
 void test_quicksort(){
     int i;
@@ -174,5 +177,40 @@ int tests_substr(){
                  test_KMP_substr();
 
     printf("\nTesting algoritms of substring find... %d errors\n", result);
+    return result;
+}
+
+/* ==== */
+
+/* Tests of generators */
+
+int test_substr_generator(){
+    
+    int result;
+    
+    size_t textsize = MEGABYTE ;
+    
+    char *text = malloc(textsize * sizeof(char));
+    
+    size_t right_answer_position = textsize - 500;
+    
+    printf("\nTesting substring generation...\n");
+    
+    generate_test_substring(text, textsize, right_answer_position);
+    
+    int pos = IB_naive_substr(text, "This string is what i search for");
+    
+    if(pos == textsize - 500)
+        {
+            result = 0;
+            printf("0=OK");
+        }
+    else{
+        result = !0;
+        printf("0=F ");
+    }
+    
+    printf("\n");
+    
     return result;
 }

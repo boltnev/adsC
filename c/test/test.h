@@ -11,5 +11,6 @@
 
 void test_quicksort();
 int  tests_substr();
+int  test_substr_generator();
 
 #endif

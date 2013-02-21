@@ -38,7 +38,7 @@ size_t IB_KMP_substr(char *s, char *p){
     
     i = 0;
     j = 0;
-    while(i < n && (j < m))
+    while((i < n) && (j < m))
     {
         if(s[i] != p[j]){
             j = prefix_function[j];
