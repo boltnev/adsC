@@ -9,7 +9,7 @@
 #ifndef ads_test_h
 #define ads_test_h
 
-void test_quicksort();
+int test_quicksort();
 int  tests_substr();
 int  test_substr_generator();
 

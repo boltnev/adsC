@@ -21,7 +21,7 @@
 #define MEGABYTE 1024*1024*1 /* 1 MB */
 
 
-void test_quicksort(){
+int test_quicksort(){
     int i;
     int datalength;
     
@@ -40,6 +40,7 @@ void test_quicksort(){
     
     printf("\n\ncomparsions number is %ld ...\n\n", comparsions);
     free(data);
+    return 0;
 }
 
 /* Substring finding tests */
@@ -188,7 +189,7 @@ int test_substr_generator(){
     
     int result;
     
-    size_t textsize = MEGABYTE ;
+    size_t textsize = MEGABYTE * 10;
     
     char *text = malloc(textsize * sizeof(char));
     
@@ -203,7 +204,7 @@ int test_substr_generator(){
     if(pos == textsize - 500)
         {
             result = 0;
-            printf("0=OK");
+            printf("0=OK ");
         }
     else{
         result = !0;
