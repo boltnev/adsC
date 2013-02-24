@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
 //
 
-#include <stdio.h>
 long comparsions = 0;
 
 void IBlong_switch(long *a, long *b){
@@ -23,10 +22,12 @@ int IBpivot_pos_of_three(long *data, int datasize){
     //finding the medium of 3
     if((data[apos] <= data[bpos] && data[bpos] <= data[cpos] )||( data[apos] >= data[bpos] && data[bpos] >= data[cpos]))
         return bpos;
-    
+    else
+        
     if((data[bpos] <= data[apos] && data[apos] <= data[cpos] )||( data[bpos] >= data[apos] && data[apos] >= data[cpos]))
         return apos;
-    
+    else
+        
     if((data[apos] <= data[cpos] && data[cpos] <= data[bpos] )||( data[apos] >= data[cpos] && data[cpos] >= data[bpos]))
         return cpos;
 }

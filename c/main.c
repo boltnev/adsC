@@ -6,10 +6,10 @@ typedef int (*intFunction)();
 
 intFunction getSubprogram(int argc, char* argv[]){
     intFunction function;
-    int i;
+    
     if(argc > 1)
     {
-        if (strcmp(argv[1], "--test-substr") == 0) 
+        if (strcmp(argv[1], "--test-substr") == 0)
             function = tests_substr;
         else if (strcmp(argv[1], "--test-sort") == 0) 
             function = test_quicksort;
@@ -22,7 +22,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         return function;
     }else{
         //default
-        function = tests_substr;
+        function = test_simpleInsertSort;
         return function;
     }
 }
