@@ -8,6 +8,9 @@
 
 #ifndef ads_global_h
 #define ads_global_h
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MEGABYTE 1024*1024*1 /* 1 MB */
 #define swap(x,y) do \

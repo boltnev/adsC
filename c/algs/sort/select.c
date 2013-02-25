@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "quicksort.h"
 #include "global.h"
 
 void IB_simpleSelectSort(long *data, size_t datasize){

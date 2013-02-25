@@ -22,7 +22,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         return function;
     }else{
         //default
-        function = test_simpleSelectSort;
+        function = test_simpleBubbleSort;
         return function;
     }
 }

@@ -14,4 +14,6 @@ int tests_substr();
 int test_substr_generator();
 int test_simpleInsertSort();
 int test_simpleSelectSort();
+int test_simpleBubbleSort();
+
 #endif

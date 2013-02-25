@@ -13,6 +13,8 @@
 #include "dataloader.h"
 #include "quicksort.h"
 #include "insert.h"
+#include "select.h"
+#include "bubble.h"
 #include "naive.h"
 #include "kmp.h"
 #include <string.h>
@@ -68,6 +70,27 @@ int test_simpleInsertSort(){
 
 
 int test_simpleSelectSort(){
+    int i;
+    int datalength;
+    
+    long *data = malloc(sizeof(long) * MAX_ELEMENTS);
+    
+    load_from_file("/Users/ilya/apps/ads/ads/c/dataloader/QuickSort.txt", data, &datalength);
+    
+    printf("\n\n%d\n\n", datalength);
+    
+    IB_simpleSelectSort(data, datalength);
+    
+    printf("\n\nsorted array...\n\n");
+    
+    for(i = 0; i < datalength; i++)
+        printf("%ld ", data[i]);
+    
+    free(data);
+    return 0;
+}
+
+int test_simpleBubbleSort(){
     int i;
     int datalength;
     
