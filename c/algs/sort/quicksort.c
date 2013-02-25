@@ -5,14 +5,9 @@
 //  Created by Ilya Boltnev on 2/16/13.
 //  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
 //
+#include "global.h"
 
 long comparsions = 0;
-
-void IBlong_switch(long *a, long *b){
-    long temp = *a;
-    *a = *b;
-    *b = temp;
-}
 
 int IBpivot_pos_of_three(long *data, int datasize){
     int apos, bpos, cpos;
@@ -39,18 +34,19 @@ int IBqsort_divide(long *data, int left, int right){
     int i;
     
     
-    IBlong_switch(&data[pivot_pos], &data[0]);
+    swap(data[pivot_pos], data[0]);
     
     for(i = 1; i <= right - 1; i++ ){
         
         comparsions += 1;
 
         if (data[i] < pivot) {
-            IBlong_switch(&data[i], &data[l++]);
+            swap(data[i], data[l]);
+            l++;
         }
     }
     
-    IBlong_switch(&data[l - 1], &data[0]);
+    swap(data[l - 1], data[0]);
     
     return l - 1;
 }

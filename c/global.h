@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 
 #define MEGABYTE 1024*1024*1 /* 1 MB */
 #define swap(x,y) do \

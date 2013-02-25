@@ -11,7 +11,6 @@
 
 long comparsions;
 
-void IBlong_switch(long *a, long *b);
 void IBquicksort(long *data, int datasize);
 
 #endif
