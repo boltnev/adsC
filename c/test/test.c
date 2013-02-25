@@ -17,9 +17,10 @@
 #include "kmp.h"
 #include <string.h>
 #include "generator.h"
+#include "global.h"
 
 #define MAX_ELEMENTS 1024*1024
-#define MEGABYTE 1024*1024*1 /* 1 MB */
+
 
 /* Sort Algorithms Tests */
 

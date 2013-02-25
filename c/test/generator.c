@@ -47,4 +47,16 @@ void generate_test_substring(char *text, size_t textsize, size_t right_answer_po
     text[textsize - 1] = '\0';
 }
 
-
+void randomSortTestGeneration(size_t datasize){
+    srand( (int)  time(NULL));
+    FILE * file;
+    file = fopen("RandomLongsForSortTests", "w");
+    size_t i;
+    int j = 5;
+    char *s = malloc(32 * sizeof(char));
+    for(i = 0; i < datasize; i++)    {
+        fprintf(file, "%zd\n", rand());
+    }
+        
+    fclose(file);
+}
