@@ -8,21 +8,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
+
 #include "CFIFOBuffer.h"
-#include "mergesort.h"
 #include "dataloader.h"
 
+#include "mergesort.h"
 #include "quicksort.h"
 #include "insert.h"
 #include "select.h"
 #include "bubble.h"
 #include "shellsort.h"
+#include "heapsort.h"
 
 #include "naive.h"
 #include "kmp.h"
 #include <string.h>
 #include "generator.h"
 #include "global.h"
+
+
 
 #define MAX_ELEMENTS 1024*1024
 #define QuickSorttxt "/Users/ilya/apps/adsC/adsC/dataloader/QuickSort.txt"
@@ -135,6 +140,37 @@ int test_ShellSort(){
     free(data);
     return 0;
 }
+
+/* Heapify test */
+
+int test_makeHeap(){
+    int i;
+    int datalength;
+    
+    long *data = malloc(sizeof(long) * MAX_ELEMENTS);
+    
+    load_from_file(QuickSorttxt, data, &datalength);
+    
+    printf("\n\n%d\n\n", datalength);
+    
+    makeHeap(data, datalength);
+    
+    for(i = 0; i < datalength; i++)
+        printf("%ld ", data[i]);
+    
+    for(i = 1; i < datalength; i++)
+        if(data[(i - 1) / 2] < data[i]){
+            
+            printf("wrong_pos = %d", i);
+            
+            assert(0);
+        }
+    
+    
+    free(data);
+    return 0;
+}
+
 
 /* Substring finding tests */
 

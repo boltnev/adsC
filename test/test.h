@@ -16,4 +16,6 @@ int test_simpleInsertSort();
 int test_simpleSelectSort();
 int test_simpleBubbleSort();
 int test_ShellSort();
+int test_makeHeap();
+
 #endif
