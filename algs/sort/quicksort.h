@@ -11,6 +11,7 @@
 
 long comparsions;
 
-void IBquicksort(long *data, int datasize);
+size_t IB_qsort_divide(long *data, size_t left, size_t right);
+void IB_quicksort(long *data, int datasize);
 
 #endif

@@ -23,7 +23,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         return function;
     }else{
         //default
-        function = test_heap;
+        function = test_findNOrder;
         return function;
     }
 }

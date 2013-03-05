@@ -21,4 +21,6 @@ int test_heapSort();
 int test_heap();
 int test_makeHeap();
 
+int test_findNOrder();
+
 #endif

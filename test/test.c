@@ -21,6 +21,8 @@
 #include "shellsort.h"
 #include "heapsort.h"
 
+#include "find_median.h"
+
 #include "naive.h"
 #include "kmp.h"
 #include <string.h>
@@ -44,7 +46,7 @@ int test_quicksort(){
     
     printf("\n\n%d\n\n", datalength);
     
-    IBquicksort(data, datalength);
+    IB_quicksort(data, datalength);
     
     printf("\n\nsorted array...\n\n");
     
@@ -203,7 +205,28 @@ int test_heap(){
     return result;
 }
 
+/* Find N order and find median test */
 
+int test_findNOrder(){
+    
+    int datalength;
+    
+    long *data = malloc(sizeof(long) * MAX_ELEMENTS);
+    
+    load_from_file(QuickSorttxt, data, &datalength);
+    
+    assert(data[IB_findMedian(data, datalength)] == 5001);
+    
+    assert(data[IB_findNOrder(data, datalength, 200)] == 201);
+    
+    assert(data[IB_findNOrder(data, datalength, 0)] == 1);
+    
+    assert(data[IB_findNOrder(data, datalength, 5897)] == 5898);
+    
+    assert(data[IB_findNOrder(data, datalength, 9999)] == 10000);
+    
+    return 0;
+}
 
 /* Substring finding tests */
 

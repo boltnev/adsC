@@ -9,8 +9,8 @@
 
 long comparsions = 0;
 
-int IBpivot_pos_of_three(long *data, int datasize){
-    int apos, bpos, cpos;
+size_t IB_pivot_pos_of_three(long *data, size_t datasize){
+    size_t apos, bpos, cpos;
     apos = 0;
     bpos = datasize / 2;
     cpos = datasize;
@@ -27,8 +27,8 @@ int IBpivot_pos_of_three(long *data, int datasize){
         return cpos;
 }
 
-int IBqsort_divide(long *data, int left, int right){
-    int pivot_pos = IBpivot_pos_of_three(data, right - 1);
+size_t IB_qsort_divide(long *data, size_t left, size_t right){
+    size_t pivot_pos = IB_pivot_pos_of_three(data, right - 1);
     long pivot = data[pivot_pos];
     int l = 1;
     int i;
@@ -38,8 +38,6 @@ int IBqsort_divide(long *data, int left, int right){
     
     for(i = 1; i <= right - 1; i++ ){
         
-        comparsions += 1;
-
         if (data[i] < pivot) {
             swap(data[i], data[l]);
             l++;
@@ -51,12 +49,12 @@ int IBqsort_divide(long *data, int left, int right){
     return l - 1;
 }
 
-void IBquicksort(long *data, int datasize){
+void IB_quicksort(long *data, size_t datasize){
     
     if(datasize <= 1)
         return;
-        int pivot_pos = IBqsort_divide(data, 0, datasize);
+        size_t pivot_pos = IB_qsort_divide(data, 0, datasize);
     
-    IBquicksort(data, pivot_pos);
-    IBquicksort(data + pivot_pos + 1, datasize - pivot_pos - 1);
+    IB_quicksort(data, pivot_pos);
+    IB_quicksort(data + pivot_pos + 1, datasize - pivot_pos - 1);
 }
