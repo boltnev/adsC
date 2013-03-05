@@ -23,7 +23,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         return function;
     }else{
         //default
-        function = test_makeHeap;
+        function = test_heap;
         return function;
     }
 }

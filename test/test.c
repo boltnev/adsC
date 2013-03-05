@@ -141,9 +141,7 @@ int test_ShellSort(){
     return 0;
 }
 
-/* Heapify test */
-
-int test_makeHeap(){
+int test_heapSort(){
     int i;
     int datalength;
     
@@ -153,23 +151,58 @@ int test_makeHeap(){
     
     printf("\n\n%d\n\n", datalength);
     
-    makeHeap(data, datalength);
+    IB_heapsort(data, datalength);
+    
+    printf("\n\nsorted array...\n\n");
     
     for(i = 0; i < datalength; i++)
         printf("%ld ", data[i]);
     
+    free(data);
+    return 0;
+}
+
+
+/* Heapify test */
+
+int test_makeHeap(){
+    int i;
+    int datalength;
+    
+    long *data = malloc(sizeof(long) * MAX_ELEMENTS);
+    
+    load_from_file(QuickSorttxt, data, &datalength);
+
+    makeHeap(data, datalength);
+    
     for(i = 1; i < datalength; i++)
-        if(data[(i - 1) / 2] < data[i]){
+        if( i % 2 ? data[i / 2] < data[i]      :
+                    data[(i - 1) / 2] < data[i]){
             
-            printf("wrong_pos = %d", i);
-            
+            printf("problem at %d", i);
             assert(0);
         }
     
+    makeMinHeap(data, datalength);
+    
+    for(i = 1; i < datalength; i++)
+        if( i % 2 ? data[i / 2] > data[i]      :
+                    data[(i - 1) / 2] > data[i]){
+            
+            printf("problem at %d", i);
+            assert(0);
+        }
     
     free(data);
     return 0;
 }
+
+int test_heap(){
+    int result =  test_makeHeap() + test_heapSort();
+
+    return result;
+}
+
 
 
 /* Substring finding tests */
