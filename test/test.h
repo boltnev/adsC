@@ -11,7 +11,6 @@
 
 int test_quicksort();
 int tests_substr();
-int test_substr_generator();
 int test_simpleInsertSort();
 int test_simpleSelectSort();
 int test_simpleBubbleSort();
@@ -22,5 +21,7 @@ int test_heap();
 int test_makeHeap();
 
 int test_findNOrder();
+
+int test_dataload_dataoutput();
 
 #endif

@@ -10,9 +10,10 @@
 #include <stdlib.h>
 #include <assert.h>
 
+//testing CFIFOBuffer
 #include "CFIFOBuffer.h"
-#include "dataloader.h"
 
+//testing sorts
 #include "mergesort.h"
 #include "quicksort.h"
 #include "insert.h"
@@ -22,14 +23,17 @@
 #include "heapsort.h"
 
 #include "find_median.h"
-
+// testing substring functions
 #include "naive.h"
 #include "kmp.h"
 #include <string.h>
+
 #include "generator.h"
 #include "global.h"
 
-
+// testing IO functions
+#include "dataloader.h"
+#include "dataoutput.h"
 
 #define MAX_ELEMENTS 1024*1024
 #define QuickSorttxt "/Users/ilya/apps/adsC/adsC/dataloader/QuickSort.txt"
@@ -368,35 +372,21 @@ int tests_substr(){
 
 /* ==== */
 
-/* Tests of generators */
-
-int test_substr_generator(){
+int test_dataload_dataoutput(){
+    size_t datalength;
     
-    int result;
+    long *data = malloc(sizeof(long) * MAX_ELEMENTS);
     
-    size_t textsize = MEGABYTE * 10;
+    datalength = loadFilePart(QuickSorttxt, data, 5000);
     
-    char *text = malloc(textsize * sizeof(char));
+    assert(datalength == 5000);
     
-    size_t right_answer_position = textsize - 500;
+    IB_quicksort(data, datalength);
     
-    printf("\nTesting substring generation...\n");
+    datalength = writeArrayToFile("output", data, 5000);
     
-    generate_test_substring(text, textsize, right_answer_position);
+    assert(datalength == 5000);
     
-    int pos = IB_naive_substr(text, "This string is what i search for");
-    
-    if(pos == textsize - 500)
-        {
-            result = 0;
-            printf("0=OK ");
-        }
-    else{
-        result = !0;
-        printf("0=F ");
-    }
-    
-    printf("\n");
-    
-    return result;
+    return 0;
 }
+

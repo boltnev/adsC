@@ -15,7 +15,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         else if (strcmp(argv[1], "--test-sort") == 0) 
             function = test_quicksort;
         else if (strcmp(argv[1], "--test-substr-generator") == 0) 
-            function = test_substr_generator;
+            function = test_heapSort;
         else{
            printf("Wrong input\n");
            abort();
@@ -23,7 +23,7 @@ intFunction getSubprogram(int argc, char* argv[]){
         return function;
     }else{
         //default
-        function = test_findNOrder;
+        function = test_dataload_dataoutput;
         return function;
     }
 }

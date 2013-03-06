@@ -52,8 +52,7 @@ void randomSortTestGeneration(size_t datasize){
     FILE * file;
     file = fopen("RandomLongsForSortTests", "w");
     size_t i;
-    int j = 5;
-    char *s = malloc(32 * sizeof(char));
+    
     for(i = 0; i < datasize; i++)    {
         fprintf(file, "%zd\n", rand());
     }

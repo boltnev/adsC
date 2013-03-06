@@ -7,13 +7,14 @@
 //
 
 #include <stdio.h>
+#include "generator.h"
 #include "test.h"
 #include "global.h"
-#include "generator.h"
 
 int main(int argc, const char * argv[])
 {
-    randomSortTestGeneration(100);
+    randomSortTestGeneration(MEGABYTE * 1000);
+    
     return 0;
 }
 
