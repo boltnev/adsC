@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Ilya Boltnev. All rights reserved.
 //
 
-#include <stdio.h>
+#include "global.h"
 
 size_t writeArrayToFile(char * filename, long * data, size_t max){
     
@@ -19,4 +19,33 @@ size_t writeArrayToFile(char * filename, long * data, size_t max){
     fclose(file);
        
     return i;
+}
+
+size_t writeArrayToPosition(char * filename,
+                            long * data,
+                          size_t   datasize,
+                          size_t   currentPos){
+    
+    FILE* file = fopen (filename, "a");
+    
+    if( file == NULL || fseek(file, (int) currentPos, 0) != 0 ){
+        printf("File %s is denied", filename);
+        abort();
+    }
+    
+    int bytesWritten;
+    
+    size_t i = 0;
+    
+    while(
+          ((bytesWritten = fprintf(file, "%ld\n", data[i++])) > 0) &&
+          (i < datasize                                          )
+         )
+    {
+        currentPos += bytesWritten;
+    }
+    
+    fclose(file);
+    
+    return currentPos;
 }

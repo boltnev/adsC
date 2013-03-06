@@ -374,18 +374,32 @@ int tests_substr(){
 
 int test_dataload_dataoutput(){
     size_t datalength;
+    size_t inputCurrentPos = 0;
+    size_t outputCurrentPos = 0;
     
     long *data = malloc(sizeof(long) * MAX_ELEMENTS);
     
-    datalength = loadFilePart(QuickSorttxt, data, 5000);
+    datalength = 2000;
     
-    assert(datalength == 5000);
+    inputCurrentPos = loadFilePart(QuickSorttxt, data, &datalength, inputCurrentPos);
+    
+    assert(datalength == 10000);
+    
+    IB_quicksort(data, datalength);
+        
+    outputCurrentPos = writeArrayToPosition("output", data, datalength, outputCurrentPos);
+    
+    assert(datalength == 10000);
+    
+    inputCurrentPos = loadFilePart(QuickSorttxt, data, &datalength, inputCurrentPos);
+    
+    assert(datalength == 0);
     
     IB_quicksort(data, datalength);
     
-    datalength = writeArrayToFile("output", data, 5000);
+    outputCurrentPos = writeArrayToPosition("output", data, datalength, outputCurrentPos);
     
-    assert(datalength == 5000);
+    assert(datalength == 0);
     
     return 0;
 }
