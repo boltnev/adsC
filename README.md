@@ -9,9 +9,11 @@ Sort Algorithms:
 * Shell sort(need to select better koefficients)
 * Quicksort
 * Mergesort
+
 Find substring algoritms:
 * Naive 
 * Knuth-Morris-Pratt algorithm
+
 Also here
 * find Median and k-order element in array
 
